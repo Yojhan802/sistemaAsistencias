@@ -1,20 +1,24 @@
 package com.sistema.asistencias.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
-public class usuario {
+public class justificacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String motivo;
 
-    private String password;
+    private LocalDate fecha;
 
-    private String rol; // ADMIN, DOCENTE
+    @ManyToOne
+    private alumno alumno;
 }
